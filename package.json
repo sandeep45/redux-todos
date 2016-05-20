@@ -5,9 +5,9 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-      "start": "webpack-dev-server",
-      "test": "mocha --compilers js:babel-register --recursive",
-      "test:watch": "npm test -- --watch"
+    "start": "webpack-dev-server",
+    "test": "mocha --compilers js:babel-register --recursive",
+    "test:watch": "npm test -- --watch"
   },
   "author": "",
   "license": "MIT",
@@ -19,6 +19,7 @@
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
     "react-redux": "^4.4.5",
+    "react-router": "^2.4.1",
     "redux": "^3.5.2",
     "redux-logger": "^2.6.1",
     "redux-thunk": "^2.1.0",

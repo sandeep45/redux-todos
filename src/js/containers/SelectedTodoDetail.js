@@ -3,8 +3,17 @@ import { connect } from 'react-redux'
 import TodoDetail from '../components/TodoDetail'
 
 const mapStateToProps = (state, ownProps) => {
+  let selectedTodoId;
+
+  // for seperate view we want from url
+  if(ownProps.params && ownProps.params.id){
+    selectedTodoId = ownProps.params.id;
+  }else{ // for inline view we are getting from state
+    selectedTodoId = state.selectedTodo;
+  }
+
   return {
-    todo: state.todos.find( todo => todo.id == state.selectedTodo) || {}
+    todo: state.todos.find( todo => todo.id == selectedTodoId) || {}
   };
 }
 

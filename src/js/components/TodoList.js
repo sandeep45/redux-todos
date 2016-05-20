@@ -1,5 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 import DeleteButton from './DeleteButton'
+import { Link } from 'react-router'
 
 class TodoList extends Component {
 
@@ -16,9 +17,8 @@ class TodoList extends Component {
         <table>
           <thead>
           <tr>
-            <th>id</th>
-            <th>title</th>
-            <th>Actions</th>
+            <th style={{width: "200px"}}>title</th>
+            <th style={{width: "200px"}}>Actions</th>
           </tr>
           </thead>
           <tbody>
@@ -27,7 +27,10 @@ class TodoList extends Component {
                 return (
                   <tr key={todo.id} onMouseOver={mouseoveredHandler.bind(this, todo.id)}>
                     <td>{todo.title}</td>
-                    <td><DeleteButton deleteHandler={deleteHandler.bind(this, todo.id)}/></td>
+                    <td>
+                      <DeleteButton deleteHandler={deleteHandler.bind(this, todo.id)}/>
+                      <Link to={`/todos/${todo.id}`}> Open </Link>
+                    </td>
                   </tr>
                 )
               })
