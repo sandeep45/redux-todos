@@ -7,13 +7,13 @@ class TodoForm extends Component {
   }
 
   render(){
-    const { createTodo, title } = this.props;
+    const { onSubmit, title } = this.props;
 
     return(
       <form onSubmit={this._handleSubmission}>
         <input type="text"
           ref={(c) => this._todoText = c}
-          placeholder={title}
+          defaultValue={title}
         />
         <input type="submit" />
       </form>
@@ -23,14 +23,14 @@ class TodoForm extends Component {
   _handleSubmission = (evt) => {
     evt.preventDefault();
     console.log("in handle submission. ", "_todoText is: ", this._todoText.value);
-    this.props.createTodo(this._todoText.value);
+    this.props.onSubmit(this._todoText.value);
     this._todoText.value="";
   }
 }
 
 TodoForm.propTypes = {
   title: PropTypes.string,
-  createTodo: PropTypes.func.isRequired
+  onSubmit: PropTypes.func.isRequired
 };
 
 export default TodoForm;

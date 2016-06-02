@@ -1,4 +1,5 @@
 import React, { PropTypes, Component } from 'react'
+import { Link } from 'react-router'
 
 class TodoDetail extends Component {
 
@@ -13,6 +14,9 @@ class TodoDetail extends Component {
       <div>
         id: {todo.id} <br/>
         title: {todo.title}
+        <ul>
+          <li> <Link to={`/todos/${todo.id}/edit`}>Edit</Link> </li>
+        </ul>
       </div>
     )
   }

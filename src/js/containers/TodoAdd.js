@@ -9,14 +9,22 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    createTodo: (title) => {
+    onSubmit: (title) => {
       dispatch(addTodo(title));
     }
   };
 }
 
-const TodoAdd = connect(
+let TodoAdd = (props) => {
+  return (
+    <div>
+      <TodoForm {...props} />
+    </div>
+  );
+}
+
+TodoAdd = connect(
     mapStateToProps, mapDispatchToProps
-  )(TodoForm)
+  )(TodoAdd)
 
 export default TodoAdd;

@@ -14,11 +14,21 @@ export const deleteTodo = (id) => {
   }
 };
 
+export const editTodo = (id, title) => {
+  return {
+    type: K.TODO_EDIT,
+    id: id,
+    title: title
+  }
+};
+
 export const selectTodo = (id) => {
   return {
     type: K.SELECT_TODO,
     id: id
   }
 };
+
+
 
 

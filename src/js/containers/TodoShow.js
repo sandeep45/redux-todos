@@ -21,6 +21,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {}
 }
 
-const SelectedTodoDetail = connect(mapStateToProps,mapDispatchToProps)(TodoDetail);
+const TodoShow = connect(mapStateToProps,mapDispatchToProps)(TodoDetail);
 
-export default SelectedTodoDetail;
+export default TodoShow;

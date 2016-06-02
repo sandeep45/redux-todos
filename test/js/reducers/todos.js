@@ -89,5 +89,45 @@ describe("todos.js", () => {
 
   });
 
+  describe("edit", () => {
+
+    it("edits the middle item", () => {
+      const newState = todos([
+          {
+            id: 1,
+            title: "a"
+          },
+          {
+            id: 2,
+            title: "b"
+          },
+          {
+            id: 3,
+            title: "c"
+          },
+          {
+            id: 4,
+            title: "d"
+          },
+          {
+            id: 5,
+            title: "e"
+          }
+        ],
+        {
+          type: K.TODO_EDIT,
+          id: 3,
+          title: "yo yo"
+        }
+      );
+      expect(newState.length).toEqual(5);
+      expect(newState).toInclude({
+        id: 3,
+        title: "yo yo"
+      });
+    });
+
+  });
+
 
 });

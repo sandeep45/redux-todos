@@ -13,6 +13,14 @@ const todos = (state=[], action) => {
     case K.TODO_DESTROY:
       return state.filter( item => item.id != action.id )
       break;
+    case K.TODO_EDIT:
+      const itemIndex = state.findIndex( item => item.id == action.id )
+      return [
+        ...state.slice(0,itemIndex),
+        {id: action.id, title: action.title },
+        ...state.slice(action.id),
+        ]
+      break;
     default:
       return state
   }

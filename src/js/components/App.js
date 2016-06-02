@@ -1,25 +1,22 @@
 import React from 'react';
-import {Link} from 'react-router';
-import VisibleTodos from '../containers/VisibleTodos.js'
-import TodoAdd from '../containers/TodoAdd.js'
-import SelectedTodoDetail from '../containers/SelectedTodoDetail.js'
 
+import NavigationLinks from './NavigationLinks.js'
+import TodoCount from '../containers/TodoCount.js'
 
 const App = (props) => {
   return(
     <div className="container">
-      <nav>
-        <ul>
-          <li> <Link to="/todos">All Todos</Link> </li>
-        </ul>
-      </nav>
+
+      <NavigationLinks />
+
+      <TodoCount />
+
       <hr />
-      <TodoAdd />
+
+      {props.children}
+
       <hr />
-      <VisibleTodos />
-      <hr />
-      <SelectedTodoDetail />
-      <hr />
+
     </div>
   )
 }
