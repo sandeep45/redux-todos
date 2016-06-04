@@ -27,7 +27,7 @@ export const editTodo = (id, title) => {
 
     dispatch(requestToEditTodo());
 
-    return axios.put(`http://localhost:3000/notes/${id}.json`, {
+    return axios.put(`/notes/${id}.json`, {
       comment: title
     }).then(
       (response) => {
@@ -64,7 +64,7 @@ export const fetchTodos = () => {
   return (dispatch) => {
     dispatch(requestTodos());
 
-    return axios.get(`http://localhost:3000/notes.json`).
+    return axios.get(`/notes.json`).
       then(
         response => {
           const data = response.data;
@@ -108,7 +108,7 @@ export const createTodo = (title) => {
   return (dispatch) => {
     dispatch(requestToCreateTodo());
 
-    return axios.post("http://localhost:3000/notes.json", {
+    return axios.post("/notes.json", {
       comment: title
     }).then(
       (response) => {
@@ -144,7 +144,7 @@ export const deleteTodo = (id) => {
   return (dispatch) => {
     dispatch(requestToDeleteTodo());
 
-    return axios.delete(`http://localhost:3000/notes/${id}.json`).
+    return axios.delete(`/notes/${id}.json`).
       then(
         (response) => {
           dispatch(successfullyDeletedTodo(id));

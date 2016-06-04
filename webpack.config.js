@@ -9,6 +9,11 @@ module.exports = {
   devServer: {
     inline: true,
     contentBase: "./dist",
+    proxy: {
+      '/notes*': {
+        target: 'http://localhost:3000'
+      }
+    }
   },
   module: {
     loaders: [
