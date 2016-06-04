@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react'
-import ActionButton from './ActionButton'
 import { Link } from 'react-router'
+
+import ActionButton from './ActionButton'
 
 class TodoList extends Component {
 
@@ -16,6 +17,7 @@ class TodoList extends Component {
         <table>
           <thead>
           <tr>
+            <th style={{width: "50px"}}>Id</th>
             <th style={{width: "200px"}}>title</th>
             <th style={{width: "200px"}}>Actions</th>
           </tr>
@@ -25,6 +27,7 @@ class TodoList extends Component {
               todos.map( (todo) => {
                 return (
                   <tr key={todo.id}>
+                    <td>{todo.id}</td>
                     <td>{todo.title}</td>
                     <td>
                       <ActionButton

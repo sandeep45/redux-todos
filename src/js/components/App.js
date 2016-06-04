@@ -2,6 +2,7 @@ import React from 'react';
 
 import NavigationLinks from './NavigationLinks.js'
 import TodoCount from '../containers/TodoCount.js'
+import StatusBar from '../containers/StatusBar'
 
 const App = (props) => {
   return(
@@ -16,6 +17,8 @@ const App = (props) => {
       {props.children}
 
       <hr />
+
+      <StatusBar />
 
     </div>
   )

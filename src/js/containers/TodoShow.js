@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
   }
 
   return {
-    todo: state.todos.find( todo => todo.id == selectedTodoId) || {}
+    todo: state.todos.todos_data_array.find( todo => todo.id == selectedTodoId) || {}
   };
 }
 

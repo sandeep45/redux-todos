@@ -9,7 +9,7 @@ import { editTodo } from '../actions'
 const mapStateToProps = (state, ownProps) => {
 
   const selectedTodoId = ownProps.params.id;
-  const selectedTodo = state.todos.find( todo => todo.id == selectedTodoId)
+  const selectedTodo = state.todos.todos_data_array.find( todo => todo.id == selectedTodoId)
 
   return {
     title: selectedTodo.title,

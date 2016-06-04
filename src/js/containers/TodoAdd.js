@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import TodoForm from '../components/TodoForm'
-import { addTodo } from '../actions'
+import { createTodo } from '../actions'
 
 const mapStateToProps = (state, ownProps) => {
   return {};
@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onSubmit: (title) => {
-      dispatch(addTodo(title));
+      dispatch(createTodo(title));
     }
   };
 }

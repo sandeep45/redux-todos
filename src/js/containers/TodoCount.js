@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    count: state.todos.length
+    count: state.todos.todos_data_array.length
   };
 }
 

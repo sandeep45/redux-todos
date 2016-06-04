@@ -5,7 +5,7 @@ import { deleteTodo, editTodo } from '../actions'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    todos: state.todos.slice(-3)
+    todos: state.todos.todos_data_array.slice(-3).reverse()
   };
 }
 

@@ -13,7 +13,9 @@ class TodoDetail extends Component {
     return(
       <div>
         id: {todo.id} <br/>
-        title: {todo.title}
+        title: {todo.title} <br/>
+        created_at: {(new Date(todo.created_at)).toLocaleTimeString()} <br/>
+        updated_at: {(new Date(todo.updated_at)).toLocaleTimeString()}
         <ul>
           <li> <Link to={`/todos/${todo.id}/edit`}>Edit</Link> </li>
         </ul>
